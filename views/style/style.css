@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../images/UNEJ.png");
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(17px);
+  --webkit-backdrop-filter: blur(17px);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+  width: 260px;
+}
+
+.sidebar .logo {
+  color: #000;
+  display: flex;
+  align-items: center;
+  padding: 25px 10px 15px;
+}
+
+.logo img {
+  width: 43px;
+  border-radius: 50%;
+}
+
+.logo h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-left: 15px;
+  display: none;
+}
+
+.sidebar:hover .logo h2 {
+  display: block;
+}
+
+.sidebar .links {
+  list-style: none;
+  margin-top: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: calc(100% - 140px);
+}
+
+.sidebar .links::-webkit-scrollbar {
+  display: none;
+}
+
+.links li {
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.links li:hover {
+  cursor: pointer;
+  background: #fff;
+}
+
+.links h4 {
+  color: #222;
+  font-weight: 500;
+  display: none;
+  margin-bottom: 10px;
+}
+
+.sidebar:hover .links h4 {
+  display: block;
+}
+
+.links hr {
+  margin: 10px 8px;
+  border: 1px solid #4c4c4c;
+}
+
+.sidebar:hover .links hr {
+  border-color: transparent;
+}
+
+.links li span {
+  padding: 12px 10px;
+}
+
+.links li a {
+  padding: 10px;
+  color: #000;
+  display: none;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sidebar:hover .links li a {
+  display: block;
+}
+
+.links .logout-link {
+  margin-top: 20px;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.content a {
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 24px;
+  border: 2px solid #fff;
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 200px;
+}
+
+.container {
+  margin-left: 110px; /* Set margin-left to the width of the sidebar */
+  transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+}
+
+.sidebar:hover + .container {
+  margin-left: 260px; /* Expand the margin when the sidebar is hovered */
+}
+
+.judul {
+  margin-bottom: 30px;
+}
+.tombol-tambah {
+  margin-bottom: 10px;
+}
+
+.glass-rectangle {
+  margin-top: 50px;
+  margin-right: 20px; /* Add margin-right to create space between the sidebar and the table */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  overflow: hidden;
+  transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+.sidebar:hover + .container .glass-rectangle {
+  width: calc(100% - 280px); /* Expand the width when the sidebar is hovered */
+}
+
+.glass-rectangle-content .table-responsive {
+  background: rgba(255, 255, 255, 0.6); /* Ubah opacity sesuai kebutuhan */
+  padding: 10px; /* Tambahkan padding agar latar belakang tidak menempel langsung pada tabel */
+  border-radius: 10px; /* Berikan sudut bulat pada latar belakang */
+}
+
+.glass-rectangle-content .table {
+  background: transparent; /* Atur latar belakang tabel menjadi transparan */
+}
+
+/* Jika Anda ingin menggunakan gambar sebagai latar belakang yang diulang */
+.glass-rectangle-content .table-responsive {
+  background-image: url("path/to/background/image.png");
+  background-size: cover; /* Atur agar gambar latar belakang menutupi seluruh area */
+  background-repeat: repeat-y; /* Atur agar gambar latar belakang diulang secara vertikal */
+  padding: 10px; /* Tambahkan padding agar latar belakang tidak menempel langsung pada tabel */
+  border-radius: 10px; /* Berikan sudut bulat pada latar belakang */
+}
+
+.table thead tr {
+  background: rgba(
+    131,
+    123,
+    123,
+    0.144
+  ); /* Warna latar belakang untuk baris header */
+}
+
+.table tbody tr:hover {
+  background: rgba(
+    131,
+    123,
+    123,
+    0.144
+  ); /* Warna latar belakang saat dihover */
+}
+
+.glass-rectangle-content {
+  padding: 40px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: left;
+}
+
+.glass-rectangle-content textarea {
+  width: 200%;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.glass-rectangle-content .form-control {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+}
+.glass-rectangle-content textarea.form-control {
+  height: 100px; /* Atur tinggi textarea */
+}
+.glass-rectangle-content textarea.form-control {
+  width: 100%; /* Atur lebar textarea */
+  height: 100px; /* Atur tinggi textarea */
+}
+
+.glass-rectangle-content .button-container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.glass-rectangle-content button:hover {
+  background: rgba(31, 38, 135, 0.5);
+}
+
+/* Style untuk tombol edit dan hapus */
+.glass-rectangle-content .table button {
+  margin-right: 5px; /* Tambahkan jarak antara tombol */
+  border: none; /* Hapus border */
+  border-radius: 5px; /* Tambahkan radius border */
+  padding: 5px 10px; /* Tambahkan padding */
+  cursor: pointer;
+}
+
+.glass-rectangle-content .table button a {
+  text-decoration: none; /* Hapus garis bawah link default */
+  color: white; /* Atur warna teks */
+}
+
+/* Tombol Edit */
+.glass-rectangle-content .table button.edit {
+  background-color: #ffc107; /* Warna kuning */
+}
+
+/* Tombol Hapus */
+.glass-rectangle-content .table button.delete {
+  background-color: #dc3545; /* Warna merah */
+}
+
+/* Penyesuaian responsif */
+@media (max-width: 768px) {
+  .glass-rectangle-content .table button {
+    margin-bottom: 5px; /* Tambahkan margin di bawah tombol untuk layar kecil */
+  }
+}
+
+/* Menu */
+.menu-atas {
+  margin: 0 auto;
+  padding: 0px 0 0;
+  height: 37px;
+  float: right;
+}
+.menu-atas ul {
+  list-style: none;
+  padding: 0;
+  height: 37px;
+  float: left;
+}
+.menu-atas ul li {
+  margin: 0;
+  padding: 0 0 0 8px;
+  float: left;
+}
+.menu-atas ul li a {
+  display: block;
+  margin: 0;
+  padding: 8px 20px;
+  color: #000;
+  text-decoration: none;
+}
+.menu-atas ul li.active a,
+.menu-atas ul li a:hover {
+  color: #0c3;
+}
+
+.form-container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); /* Ubah 0.8 menjadi tingkat kecerahan yang Anda inginkan ruangan edit */
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(5px); /* Tambahkan efek blur */
+}
+
+.form-wrapper {
+  margin-top: 50px; /* Atur jarak dari layar atas di sini */
+}
