@@ -1,18 +1,19 @@
 <?php
 include_once __DIR__ . '/../model/database.php';
-include_once __DIR__ . '/../views/admin/ruangan.php';
 
-class RuanganController {
+class RuanganController
+{
     private $db;
     public $result; // Define a class property to store the result
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = new Database();
     }
 
     public function index() {
         $conn = $this->db->getConnection();
-
+    
         $searchQuery = "";
         if (isset($_GET['cari']) && $_GET['cari'] != "") {
             $searchQuery = $_GET['cari'];
@@ -20,12 +21,13 @@ class RuanganController {
         } else {
             $query = "SELECT * FROM ruangan";
         }
-
+    
         $this->result = mysqli_query($conn, $query); // Assign to class property
-        include_once __DIR__ . '/../../views/admin/ruangan.php';
+        include_once '../../views/admin/ruangan.php';
     }
 
-    public function create($data) {
+    public function create($data)
+    {
         $conn = $this->db->getConnection();
         // Assuming $data is an associative array containing the details of the new room
         // Implement your validation and sanitation here
@@ -39,7 +41,7 @@ class RuanganController {
 
         if (mysqli_query($conn, $query)) {
             // Success, redirect or handle accordingly
-            header("Location: ruangan.php");
+            header("Location: ../../views/admin/ruangan.php");
             exit;
         } else {
             // Error handling
@@ -47,7 +49,8 @@ class RuanganController {
         }
     }
 
-    public function update($id, $data) {
+    public function update($id, $data)
+    {
         $conn = $this->db->getConnection();
         // Assuming $data is an associative array containing the updated details of the room
         // Implement your validation and sanitation here
@@ -69,14 +72,15 @@ class RuanganController {
         }
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         $conn = $this->db->getConnection();
 
         $query = "DELETE FROM ruangan WHERE id_ruangan=$id";
 
         if (mysqli_query($conn, $query)) {
             // Success, redirect or handle accordingly
-            header("Location: ruangan.php");
+            header("Location: ../../views/admin/ruangan.php");
             exit;
         } else {
             // Error handling
@@ -92,4 +96,3 @@ $ruanganController = new RuanganController();
 // $ruanganController->create($data);
 // $ruanganController->update($id, $data);
 // $ruanganController->delete($id);
-?>

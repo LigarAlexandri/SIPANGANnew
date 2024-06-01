@@ -1,5 +1,8 @@
 <?php
 include __DIR__ . '/../../model/database.php';
+include '../middleware.php';
+checkAuth();
+checkRole('admin');
 
 
 // Inisialisasi koneksi ke database

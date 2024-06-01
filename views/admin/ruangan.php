@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../../controller/ruanganController.php';
+require_once '../../controller/ruanganController.php';
+
+
+
 
 // Assuming $ruanganController is an instance of RuanganController
 $searchQuery = isset($_GET['cari']) ? $_GET['cari'] : "";
@@ -47,7 +50,7 @@ $ruanganController->index(); // Call the index method to populate $result
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'Logout'; ?></span>
-                <a href="Main.php"><?php echo 'Logout'; ?></a>
+                <a href="../logout.php"><?php echo 'Logout'; ?></a>
             </li>
             <hr>
         </ul>
