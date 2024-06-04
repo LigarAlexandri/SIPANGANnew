@@ -1,9 +1,6 @@
 <?php
 require_once '../../controller/ruanganController.php';
 
-
-
-
 // Assuming $ruanganController is an instance of RuanganController
 $searchQuery = isset($_GET['cari']) ? $_GET['cari'] : "";
 $ruanganController = new RuanganController();
@@ -34,11 +31,19 @@ $ruanganController->index(); // Call the index method to populate $result
             <h4><?php echo 'Sidebar'; ?></h4>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'meeting_room'; ?></span>
+                <a href="adminTU.php"><?php echo 'Beranda'; ?></a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined"><?php echo 'meeting_room'; ?></span>
                 <a href="ruangan.php"><?php echo 'Ruangan'; ?></a>
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'Group'; ?></span>
-                <a href="mahasiswa.php"><?php echo 'Mahasiswa'; ?></a>
+                <a href="../auth/registerAkun.php"><?php echo 'Buat Akun Mahasiswa'; ?></a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined"><?php echo 'Group'; ?></span>
+                <a href="adminVerif.php"><?php echo 'Verifikasi Ruangan'; ?></a>
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'chat'; ?></span>
