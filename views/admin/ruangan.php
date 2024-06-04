@@ -55,7 +55,7 @@ $ruanganController->index(); // Call the index method to populate $result
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'Logout'; ?></span>
-                <a href="../logout.php"><?php echo 'Logout'; ?></a>
+                <a href="../main.php"><?php echo 'Logout'; ?></a>
             </li>
             <hr>
         </ul>
