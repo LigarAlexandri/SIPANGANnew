@@ -21,7 +21,7 @@ class RegisterController {
 
         if (mysqli_query($conn, $query)) {
             $this->sendWelcomeEmail($email, $username, $data['password']); // Send the welcome email
-            header("Location: ../views/login.php");
+            header("Location: ../views/admin/adminTU.php");
             exit();
         } else {
             echo "Error: " . mysqli_error($conn);
@@ -29,8 +29,8 @@ class RegisterController {
     }
 
     private function sendWelcomeEmail($email, $username, $password) {
-        $subject = "Registration Successful";
-        $message_content = "Your registration was successful. Here are your credentials.";
+        $subject = "Hasil Registrasi Akun Mahasiswa";
+        $message_content = "Registrasi berhasil, berikut kredensial akun anda:";
 
         $message = "
         <html>

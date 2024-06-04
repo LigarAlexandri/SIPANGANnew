@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+    <title>Registrasi Akun Mahasiswa</title>
     <!-- Linking Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h2 class="mt-5">Register</h2>
+        <h2 class="mt-5">Register Akun Mahasiswa</h2>
         <form action="../../controller/registerController.php" method="post">
             <div class="form-group">
-                <label for="nama">Nama</label>
+                <label for="nama">Nama Mahasiswa</label>
                 <input type="text" class="form-control" name="nama" id="nama" required>
             </div>
             <div class="form-group">
@@ -30,9 +30,7 @@
             <div class="form-group">
                 <label for="role">Role</label>
                 <select class="form-control" name="role" id="role" required>
-                    <option value="admin">Admin</option>
                     <option value="mahasiswa">Mahasiswa</option>
-                    <option value="superadmin">Super Admin</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Register</button>

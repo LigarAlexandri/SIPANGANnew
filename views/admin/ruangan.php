@@ -39,7 +39,7 @@ $ruanganController->index(); // Call the index method to populate $result
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'Group'; ?></span>
-                <a href="../auth/registerAkun.php"><?php echo 'Buat Akun Mahasiswa'; ?></a>
+                <a href="registerAkun.php"><?php echo 'Buat Akun Mahasiswa'; ?></a>
             </li>
             <li>
                 <span class="material-symbols-outlined"><?php echo 'Group'; ?></span>
